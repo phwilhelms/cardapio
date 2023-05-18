@@ -1,5 +1,6 @@
 package com.example.cardapio.domain;
 
+import com.example.cardapio.dto.FoodRequestDto;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -17,6 +18,12 @@ public class FoodDomain {
     private Double price;
 
     public FoodDomain() {
+    }
+
+    public FoodDomain(FoodRequestDto data) {
+        this.title = data.title();
+        this.image = data.image();
+        this.price = data.price();
     }
 
     public UUID getId() {
